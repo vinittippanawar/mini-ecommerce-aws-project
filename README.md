@@ -80,7 +80,7 @@ Insert sample items:
 Keep the "image" field blank when inserting the product for the first time.
 After uploading product images to your S3 bucket, copy the public S3 URL and update this field with the actual image link for each image.
 
-```json
+```
 https://mini-ecommerce-images-vinit.s3.ap-south-1.amazonaws.com/wirless.jpg
 ```
 
