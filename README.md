@@ -84,6 +84,9 @@ After uploading product images to your S3 bucket, copy the public S3 URL and upd
 https://mini-ecommerce-images-vinit.s3.ap-south-1.amazonaws.com/wirless.jpg
 ```
 
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ba156585-1ef7-4f84-9405-e38b69904869" />
+
+
 
 ---
 
