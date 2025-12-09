@@ -495,12 +495,12 @@ Example order:
   "productId": "p2",
   "timestamp": "2025-12-07T12:22:00Z"
 }
+```
 4. Go to your frontend and click Order on any product:
-
 ```
 http://mini-ecommerce-frontend-vinit.s3-website.ap-south-1.amazonaws.com/
 ```
-6.Refresh the Orders table → A new order should appear automatically.
+5.Refresh the Orders table → A new order should appear automatically.
 
 **SAMPLE VIDEO**
 
