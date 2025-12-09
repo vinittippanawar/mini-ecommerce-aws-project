@@ -64,6 +64,7 @@ mini-ecommerce/
 
 ## 1️⃣ Products Table  
 ```
+GO TO AWS CONSOLE SEARCH DYNAMODB THEN GO TO CREATE TABLE   
 Table name: Products
 Partition key: id (String)
 ```
@@ -89,7 +90,7 @@ After uploading product images to your S3 bucket, copy the public S3 URL and upd
 ```
 https://mini-ecommerce-images-vinit.s3.ap-south-1.amazonaws.com/wirless.jpg
 ```
-
+**📸URL EDIT  IMAGE**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ba156585-1ef7-4f84-9405-e38b69904869" />
 
 
@@ -102,7 +103,7 @@ Table name: Orders
 Partition key: orderId (String)
 ```
 
-
+**📸ORDER TABLE IMAGE**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/47898d5e-bcf4-452e-bf3e-4b7db10da168" />
 
 ---
@@ -121,6 +122,7 @@ Upload:
 
 📌 Note: make sure disable the button of block all public access while creating bucket so it ensure that bucket is publically accessible.
 
+**📸BLOCK PUBLIC ACCESS**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/e53721f6-85aa-4597-a6fc-ab7fa8337411" />
 
 
@@ -144,10 +146,10 @@ Test each image: s3 → buckets → mini-ecommerce-images-vinit → click on any
 ```
 https://mini-ecommerce-images-vinit.s3.ap-south-1.amazonaws.com/wirless.jpg
 ```
-
+**📸UPLOAD IMAGE**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/fc16ed2b-89d1-4168-a1b2-751a1f3c27b8" />
 
-
+**📸OBJECT URL IMAGE**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/afddfb27-1d62-411e-a97a-7e8e56bbf9b0" />
 
 ---
@@ -219,9 +221,10 @@ after that go to your file manager and select both file and also node_modules if
 Zip files INSIDE backend folder → **backend.zip**
 ```
 
-
+**📸ZIP  IMAGE**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/39ef09ae-8258-4cc9-9834-63b826a6975a" />
 
+**📸NPM INSTALL IMAGE**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/cd515c69-dda9-4dc7-9fac-b40ccccd5a38" />
 
 ---
@@ -256,8 +259,9 @@ Attach:
 - AWSElasticBeanstalkWorkerTier  
 - AWSElasticBeanstalkMulticontainerDocker  
 - AmazonDynamoDBFullAccess  
-- AmazonS3ReadOnlyAccess  
+- AmazonS3ReadOnlyAccess
 
+**📸EC2ROLE IMAGE**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/03c5ca17-3874-463a-8349-4581fac219f6" />
 
 ---
@@ -325,7 +329,7 @@ Backend URL:
 ```
 http://vinitzcloud.ap-south-1.elasticbeanstalk.com/
 ```
-
+**📸BENSTALK CONFIGURATION IMAGE**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/0b36a2c7-b7dd-48c8-bff4-9a45f6aa3fa1" />
 
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/4e64cce6-835b-4a71-9728-177fc9705f34" />
@@ -339,6 +343,7 @@ Visit:Elastic Beanstalk → Environments → mini-ecommerce-env → check domain
 ```
 http://vinitzcloud.ap-south-1.elasticbeanstalk.com/
 ```
+**📸BACKEND URL IMAGE**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/020f9a79-ddce-4948-a66e-86e9b729ec83" />
 
 
@@ -346,6 +351,7 @@ Response:
 ```
 Mini Ecommerce Backend Running!
 ```
+**📸BACKEND OUTPUT IMAGE**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/320d5878-b4b9-4583-b3f6-d2ab6ff07af2" />
 
 ---
@@ -395,6 +401,7 @@ Create **frontend/style.css**:
 body { font-family: Arial; padding: 20px; }
 #products { display: flex; gap: 20px; flex-wrap: wrap; }
 ```
+**📸FRONTEND FILE CREATION IMAGE**
 <img width="1408" height="371" alt="Image" src="https://github.com/user-attachments/assets/c78f78d2-c9ad-4fd2-8507-c2f77e4b059a" />
 
 ---
@@ -406,6 +413,7 @@ Bucket name:
 ```
 mini-ecommerce-frontend-vinit
 ```
+**📸S3 BUCKET FOR FRONTEND IMAGE**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/83c249d8-0084-4739-b732-9a993190af88" />
 
 ---
@@ -414,6 +422,7 @@ mini-ecommerce-frontend-vinit
 
 Go to:
 Properties → Static Website Hosting → Enable
+Then click on edit and set 
 
 Index document:
 ```
@@ -422,7 +431,7 @@ index.html
 
 Copy Website Endpoint.
 
-
+**📸STATIC WEBSITE  HOSTING CONFIG IMAGE**
 <img width="1447" height="358" alt="Image" src="https://github.com/user-attachments/assets/80592a4b-78d1-472e-90cb-7bafe6cb5fbe" />
 
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/74a365f9-f16b-4140-82eb-c1e06e404621" />
@@ -449,6 +458,7 @@ Paste:
   ]
 }
 ```
+**📸BUCKET POLICY  IMAGE**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/b3fe5ce8-0dc2-418d-a90b-f2bd3c60cd5c" />
 
 ---
@@ -460,7 +470,7 @@ Upload:
 - script.js  
 - style.css
 ```
-
+**📸FRONTEND FILE UPLOAD ON S3 IMAGE**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/869638fd-7851-4e87-895e-6f74678e6e11" />
 
 Your live frontend:
@@ -468,9 +478,33 @@ Your live frontend:
 ```
 http://mini-ecommerce-frontend-vinit.s3-website.ap-south-1.amazonaws.com/
 ```
+**📸LIVE FRONTEND IMAGE**
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/b061a731-d7af-4050-b7e5-7f2ecacbdb5a" />
 
 ---
+# ⭐ STEP 13 — Check DynamoDB orders table when user click on buy now 
+
+1. Open **AWS DynamoDB → Tables → Orders**
+2. Click **Explore items**
+3. You should see orders created from the frontend.
+
+Example order:
+```json
+{
+  "orderId": "o1733541580000",
+  "productId": "p2",
+  "timestamp": "2025-12-07T12:22:00Z"
+}
+4. Go to your frontend and click Order on any product:
+
+```
+http://mini-ecommerce-frontend-vinit.s3-website.ap-south-1.amazonaws.com/
+```
+6.Refresh the Orders table → A new order should appear automatically.
+
+**SAMPLE VIDEO**
+
+https://github.com/user-attachments/assets/25c238f4-74fb-4c36-a89b-af9293cb3a41
 
 # 🎉 Project Working Successfully  
 
