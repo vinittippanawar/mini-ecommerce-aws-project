@@ -135,12 +135,15 @@ Upload:
 }
 ```
 
-Test:
+Test each image: s3 → buckets → mini-ecommerce-images-vinit → click on any images → look at object url in permission section.
 ```
 https://mini-ecommerce-images-vinit.s3.ap-south-1.amazonaws.com/wirless.jpg
 ```
 
-<img src="ADD_YOUR_SCREENSHOT" width="900">
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/fc16ed2b-89d1-4168-a1b2-751a1f3c27b8" />
+
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/afddfb27-1d62-411e-a97a-7e8e56bbf9b0" />
 
 ---
 
