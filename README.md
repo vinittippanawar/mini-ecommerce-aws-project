@@ -445,23 +445,26 @@ Paste:
   ]
 }
 ```
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/b3fe5ce8-0dc2-418d-a90b-f2bd3c60cd5c" />
 
 ---
 
 # ⭐ STEP 12 — Upload Frontend Files  
-
+```
 Upload:
 - index.html  
 - script.js  
-- style.css  
+- style.css
+```
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/869638fd-7851-4e87-895e-6f74678e6e11" />
 
 Your live frontend:
 
 ```
 http://mini-ecommerce-frontend-vinit.s3-website.ap-south-1.amazonaws.com/
 ```
-
-<img src="ADD_YOUR_SCREENSHOT" width="900">
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/b061a731-d7af-4050-b7e5-7f2ecacbdb5a" />
 
 ---
 
@@ -470,7 +473,7 @@ http://mini-ecommerce-frontend-vinit.s3-website.ap-south-1.amazonaws.com/
 ✔ Products load  
 ✔ Images load  
 ✔ Orders stored in DynamoDB  
-✔ Backend EB works  
+✔ Backend works  
 ✔ Frontend S3 works  
 
 ---
