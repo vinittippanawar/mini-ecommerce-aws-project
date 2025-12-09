@@ -149,9 +149,12 @@ https://mini-ecommerce-images-vinit.s3.ap-south-1.amazonaws.com/wirless.jpg
 ---
 
 # ⭐ STEP 3 — Build Backend (Node.js + Express)
-1.create a folder in your local pc name as **mini-ecom-backend**
-2.then open this in folder in **vs code** or locally you can do it 
-3.then create file and name as **app.js** along with that **package.json** also edit with follwing code.
+```
+1. Create a folder in your local PC named **mini-ecom-backend**  
+2. Open this folder in VS Code  
+3. Create a file named **app.js**  
+4. Create a **package.json** file and paste the following code  
+```
 
 **app.js** 
 
@@ -207,9 +210,10 @@ Install: run this on command line make sure that directory should be backend fol
 ```
 npm install
 ```
+```
 after that go to your file manager and select both file and also node_modules if automatically created
 Zip files INSIDE backend folder → **backend.zip**
-
+```
 ---
 
 # ⭐ STEP 4 — Create Elastic Beanstalk IAM Roles  
