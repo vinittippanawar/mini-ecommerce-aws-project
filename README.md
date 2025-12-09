@@ -63,6 +63,7 @@ Table name: Products
 Partition key: id (String)
 ```
 
+then go to products table and clicl on create items then 
 Insert sample items:
 
 ```json
@@ -96,15 +97,6 @@ Table name: Orders
 Partition key: orderId (String)
 ```
 
-Example item:
-
-```json
-{
-  "orderId": "o123",
-  "productId": "p1",
-  "timestamp": "2025-12-07T12:22:00Z"
-}
-```
 
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/47898d5e-bcf4-452e-bf3e-4b7db10da168" />
 
@@ -120,7 +112,12 @@ mini-ecommerce-images-vinit
 Upload:
 - wirless.jpg  
 - speaker.jpeg  
-- smartwatch.jpg  
+- smartwatch.jpg
+
+📌 Note: make sure disable the button of block all public access while creating bucket so it ensure that bucket is publically accessible.
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/e53721f6-85aa-4597-a6fc-ab7fa8337411" />
+
 
 ## Add Public Bucket Policy:
 
