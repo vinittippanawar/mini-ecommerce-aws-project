@@ -50,7 +50,8 @@ mini-ecommerce/
 - AWS Account  
 - IAM Admin user  
 - Region: ap-south-1 (Mumbai)  
-- Node.js installed  
+- Node.js installed
+- basic file creation 
   
 
 ---
@@ -63,7 +64,7 @@ Table name: Products
 Partition key: id (String)
 ```
 
-then go to products table and clicl on create items then 
+then go to products table and click on create items then 
 Insert sample items:
 
 ```json
@@ -148,8 +149,11 @@ https://mini-ecommerce-images-vinit.s3.ap-south-1.amazonaws.com/wirless.jpg
 ---
 
 # ⭐ STEP 3 — Build Backend (Node.js + Express)
+1.create a folder in your local pc name as **mini-ecom-backend**
+2.then open this in folder in **vs code** or locally you can do it 
+3.then create file and name as **app.js** along with that **package.json** also edit with follwing code.
 
-Create **backend/app.js**:
+**app.js** 
 
 ```js
 const express = require("express");
@@ -198,12 +202,12 @@ app.listen(process.env.PORT || 8080, () =>
 }
 ```
 
-Install:
+Install: run this on command line make sure that directory should be backend folder while installing npm
 
 ```
 npm install
 ```
-
+after that go to your file manager and select both file and also node_modules if automatically created
 Zip files INSIDE backend folder → **backend.zip**
 
 ---
