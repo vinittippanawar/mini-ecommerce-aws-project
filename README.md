@@ -71,10 +71,16 @@ Insert sample items:
   "name": "Wireless Earbuds",
   "price": 999,
   "description": "High quality wireless earbuds.",
-  "image": "https://mini-ecommerce-images-vinit.s3.ap-south-1.amazonaws.com/wirless.jpg" (when you upload product images in s3 then you will get this url so first keep it blank and when you get s3 images then edit this section with actual image link for each product )
+  "image": ""
 }
+
+📌 Note:
+Leave the "image" field blank when creating the product.
+After uploading product images to your S3 image bucket, copy the S3 object URL and update the "image" field with the actual link.
+Example (after updating):
 ```
-so replace this section with actual s3 link or you can edit in json format <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/c7cc1dcf-d875-4455-b813-6239108296fa" />
+https://mini-ecommerce-images-vinit.s3.ap-south-1.amazonaws.com/wirless.jpg
+
 
 
 ---
