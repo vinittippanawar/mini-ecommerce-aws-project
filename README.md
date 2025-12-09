@@ -214,6 +214,12 @@ npm install
 after that go to your file manager and select both file and also node_modules if automatically created
 Zip files INSIDE backend folder → **backend.zip**
 ```
+
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/39ef09ae-8258-4cc9-9834-63b826a6975a" />
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/cd515c69-dda9-4dc7-9fac-b40ccccd5a38" />
+
 ---
 
 # ⭐ STEP 4 — Create Elastic Beanstalk IAM Roles  
