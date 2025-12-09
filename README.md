@@ -1,7 +1,7 @@
 # 🚀 Mini Ecommerce Project (Node.js → Elastic Beanstalk → DynamoDB → S3 Frontend Hosting)
 
 A fully deployed, cloud-ready mini ecommerce application built on AWS.  
-This project demonstrates **real-world fullstack deployment** using AWS services — perfect for students, beginners, and anyone building a portfolio project.
+This project demonstrates **real-world fullstack deployment** using AWS services.
 
 This setup includes:
 - **Backend API** (Node.js on Elastic Beanstalk)
