@@ -259,7 +259,7 @@ Attach:
 ---
 
 # ⭐ STEP 5 — Fix VPC Internet Gateway Issue (Important)
-You faced the error:
+I faced the error:
 ```
 Network vpc-xxxx is not attached to any internet gateway
 ```
@@ -268,7 +268,7 @@ Fix:
 
 ### 1. Go to → VPC → Internet Gateway  
 - Create IGW  
-- Attach to your VPC  
+- Attach to your VPC  (default) 
 
 ### 2. Route Table  
 Add route:
@@ -322,33 +322,38 @@ Backend URL:
 http://vinitzcloud.ap-south-1.elasticbeanstalk.com/
 ```
 
-<img src="ADD_YOUR_SCREENSHOT" width="900">
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/0b36a2c7-b7dd-48c8-bff4-9a45f6aa3fa1" />
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/4e64cce6-835b-4a71-9728-177fc9705f34" />
 
 ---
 
 # ⭐ STEP 7 — Test Backend  
 
-Visit:
+Visit:Elastic Beanstalk → Environments → mini-ecommerce-env → check domain
 
 ```
 http://vinitzcloud.ap-south-1.elasticbeanstalk.com/
 ```
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/020f9a79-ddce-4948-a66e-86e9b729ec83" />
+
 
 Response:
 ```
 Mini Ecommerce Backend Running!
 ```
-
-Test API:
-
-```
-/products
-/order
-```
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/320d5878-b4b9-4583-b3f6-d2ab6ff07af2" />
 
 ---
 
 # ⭐ STEP 8 — Build Frontend  
+```
+1. Create a folder in your local PC named **mini-ecom-frontend**  
+2. Open this folder in VS Code  
+3. Create a file named **index.html** file and paste the following code 
+4. Create a **script.js** file and paste the following code
+5. Create a **style.css** file and paste the following code
+```
 
 Create **frontend/index.html**:
 
@@ -386,6 +391,7 @@ Create **frontend/style.css**:
 body { font-family: Arial; padding: 20px; }
 #products { display: flex; gap: 20px; flex-wrap: wrap; }
 ```
+<img width="1408" height="371" alt="Image" src="https://github.com/user-attachments/assets/c78f78d2-c9ad-4fd2-8507-c2f77e4b059a" />
 
 ---
 
@@ -396,6 +402,7 @@ Bucket name:
 ```
 mini-ecommerce-frontend-vinit
 ```
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/83c249d8-0084-4739-b732-9a993190af88" />
 
 ---
 
@@ -410,6 +417,11 @@ index.html
 ```
 
 Copy Website Endpoint.
+
+
+<img width="1447" height="358" alt="Image" src="https://github.com/user-attachments/assets/80592a4b-78d1-472e-90cb-7bafe6cb5fbe" />
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/74a365f9-f16b-4140-82eb-c1e06e404621" />
 
 ---
 
