@@ -224,6 +224,13 @@ Zip files INSIDE backend folder → **backend.zip**
 
 # ⭐ STEP 4 — Create Elastic Beanstalk IAM Roles  
 
+> ⚠️ Note:  
+> These IAM roles are created during the Elastic Beanstalk environment setup.  
+> You can also create them manually if needed.  
+> Elastic Beanstalk will ask for:  
+> 1️⃣ A **Service Role** (used by Elastic Beanstalk itself)  
+> 2️⃣ An **EC2 Instance Profile** (used by the EC2 instance running your app) 
+
 ## Service Role  
 Name:
 ```
@@ -246,6 +253,8 @@ Attach:
 - AWSElasticBeanstalkMulticontainerDocker  
 - AmazonDynamoDBFullAccess  
 - AmazonS3ReadOnlyAccess  
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/03c5ca17-3874-463a-8349-4581fac219f6" />
 
 ---
 
