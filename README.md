@@ -1,13 +1,12 @@
 # 🚀 Mini Ecommerce Project (Node.js → Elastic Beanstalk → DynamoDB → S3 Frontend Hosting)
-*A fully deployed, beginner-friendly AWS cloud project for portfolio & resume.*
+A fully deployed, beginner-friendly AWS cloud project for portfolio & resume.
 
-This project contains a complete mini e-commerce setup with:
+This project contains:
 - Backend API (Node.js on Elastic Beanstalk)
 - Frontend (S3 Static Website Hosting)
-- Database (DynamoDB)
+- DynamoDB Tables (Products + Orders)
 - Product Images (S3 Bucket)
-
-This README is written in **super simple baby-feeding style** — ANYONE can follow it.
+- Full step-by-step setup including all issues faced during deployment
 
 ---
 
@@ -18,12 +17,11 @@ Frontend (HTML/JS) → S3 Static Website Hosting
                      ↓
 Backend API → Elastic Beanstalk (Node.js)
                      ↓
-Database → DynamoDB (Products + Orders)
+DynamoDB (Products + Orders)
                      ↓
-Images → S3 Public Image Bucket
+S3 Image Bucket (Public Images)
 ```
 
-### 📸 Architecture Diagram  
 <img src="ADD_YOUR_SCREENSHOT" width="900">
 
 ---
@@ -41,7 +39,7 @@ mini-ecommerce/
 ├── frontend/
 │   ├── index.html
 │   ├── script.js
-│   └── style.css
+│   ├── style.css
 │
 └── README.md
 ```
@@ -49,31 +47,21 @@ mini-ecommerce/
 ---
 
 # 🧠 3. Prerequisites  
-
 - AWS Account  
-- IAM User with **AdministratorAccess**  
-- Region: **ap-south-1 (Mumbai)**  
+- IAM Admin user  
+- Region: ap-south-1 (Mumbai)  
 - Node.js installed  
-- Chrome Browser  
-
----
-
-# 🍽 4. Step-by-Step Setup  
+- Basic VS Code  
 
 ---
 
 # ⭐ STEP 1 — Create DynamoDB Tables  
 
-Go to → **AWS Console → DynamoDB → Tables**
-
----
-
-## 🟩 1. Products Table  
-
-| Setting | Value |
-|--------|--------|
-| Table name | Products |
-| Partition key | id (String) |
+## 1️⃣ Products Table  
+```
+Table name: Products
+Partition key: id (String)
+```
 
 Insert sample items:
 
@@ -87,53 +75,43 @@ Insert sample items:
 }
 ```
 
-### 📸 Screenshot — DynamoDB Products  
 <img src="ADD_YOUR_SCREENSHOT" width="900">
 
 ---
 
-## 🟩 2. Orders Table  
+## 2️⃣ Orders Table  
+```
+Table name: Orders
+Partition key: orderId (String)
+```
 
-| Setting | Value |
-|--------|--------|
-| Table name | Orders |
-| Partition key | orderId (String) |
-
-Example order:
+Example item:
 
 ```json
 {
-  "orderId": "o1733541580000",
-  "productId": "p2",
+  "orderId": "o123",
+  "productId": "p1",
   "timestamp": "2025-12-07T12:22:00Z"
 }
 ```
 
-### 📸 Screenshot — DynamoDB Orders  
 <img src="ADD_YOUR_SCREENSHOT" width="900">
 
 ---
 
 # ⭐ STEP 2 — Create S3 Bucket for Product Images  
 
-Create bucket:
-
+Bucket name:
 ```
 mini-ecommerce-images-vinit
 ```
 
-Upload images:
+Upload:
 - wirless.jpg  
 - speaker.jpeg  
 - smartwatch.jpg  
 
----
-
-### 🟩 Add Public Bucket Policy  
-
-Go to → Bucket → Permissions → Bucket Policy
-
-Paste:
+## Add Public Bucket Policy:
 
 ```json
 {
@@ -149,20 +127,18 @@ Paste:
 }
 ```
 
-Test image:
-
+Test:
 ```
 https://mini-ecommerce-images-vinit.s3.ap-south-1.amazonaws.com/wirless.jpg
 ```
 
-### 📸 Screenshot — S3 Image Bucket  
 <img src="ADD_YOUR_SCREENSHOT" width="900">
 
 ---
 
 # ⭐ STEP 3 — Build Backend (Node.js + Express)
 
-Create file: **app.js**
+Create **backend/app.js**:
 
 ```js
 const express = require("express");
@@ -189,12 +165,13 @@ app.post("/order", async (req, res) => {
   res.json({ message: "Order Created!" });
 });
 
-app.listen(3000, () => console.log("Server running on port 3000"));
+// Required for Elastic Beanstalk
+app.listen(process.env.PORT || 8080, () =>
+  console.log("Server running...")
+);
 ```
 
----
-
-Create file: **package.json**
+**package.json**
 
 ```json
 {
@@ -210,26 +187,100 @@ Create file: **package.json**
 }
 ```
 
-Install dependencies:
+Install:
 
 ```
 npm install
 ```
 
+Zip files INSIDE backend folder → **backend.zip**
+
 ---
 
-# ⭐ STEP 4 — Deploy Backend to Elastic Beanstalk  
+# ⭐ STEP 4 — Create Elastic Beanstalk IAM Roles  
 
-Go to → Elastic Beanstalk → Create Application
+## Service Role  
+Name:
+```
+aws-elasticbeanstalk-service-role-09
+```
 
-### Settings:
-- Platform → **Node.js 24**
-- Environment → **Single instance**
-- Upload ZIP (app.js + package.json + node_modules)
+Attach:
+- AWSElasticBeanstalkEnhancedHealth  
+- AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy  
 
-### IAM Roles:
-- Service role → `aws-elasticbeanstalk-service-role-09`
-- Instance profile → `aws-elasticbeanstalk-ec2-role`
+## EC2 Instance Profile  
+Name:
+```
+aws-elasticbeanstalk-ec2-role
+```
+
+Attach:
+- AWSElasticBeanstalkWebTier  
+- AWSElasticBeanstalkWorkerTier  
+- AWSElasticBeanstalkMulticontainerDocker  
+- AmazonDynamoDBFullAccess  
+- AmazonS3ReadOnlyAccess  
+
+---
+
+# ⭐ STEP 5 — Fix VPC Internet Gateway Issue (Important)
+You faced the error:
+```
+Network vpc-xxxx is not attached to any internet gateway
+```
+
+Fix:
+
+### 1. Go to → VPC → Internet Gateway  
+- Create IGW  
+- Attach to your VPC  
+
+### 2. Route Table  
+Add route:
+```
+0.0.0.0/0 → igw-xxxx
+```
+
+Now EC2 instance can reach the internet.
+
+---
+
+# ⭐ STEP 6 — Deploy Backend to Elastic Beanstalk  
+
+Go to:
+Elastic Beanstalk → Create Application
+
+### Application
+```
+Name: mini-ecommerce
+```
+
+### Environment
+```
+Name: mini-env
+Platform: Node.js 24
+Upload: backend.zip
+```
+
+### Service Access
+```
+Service role: aws-elasticbeanstalk-service-role-09
+Instance profile: aws-elasticbeanstalk-ec2-role
+```
+
+### Networking
+```
+VPC: default
+Public IP: Enabled
+Subnets: select 2 public subnets
+```
+
+### Instance
+```
+Type: t3.micro
+Environment: Single instance
+```
 
 Backend URL:
 
@@ -237,14 +288,35 @@ Backend URL:
 http://vinitzcloud.ap-south-1.elasticbeanstalk.com/
 ```
 
-### 📸 Screenshot — Backend Running  
 <img src="ADD_YOUR_SCREENSHOT" width="900">
 
 ---
 
-# ⭐ STEP 5 — Build Frontend  
+# ⭐ STEP 7 — Test Backend  
 
-Create **index.html**:
+Visit:
+
+```
+http://vinitzcloud.ap-south-1.elasticbeanstalk.com/
+```
+
+Response:
+```
+Mini Ecommerce Backend Running!
+```
+
+Test API:
+
+```
+/products
+/order
+```
+
+---
+
+# ⭐ STEP 8 — Build Frontend  
+
+Create **frontend/index.html**:
 
 ```html
 <h1>Mini Store</h1>
@@ -252,46 +324,67 @@ Create **index.html**:
 <script src="script.js"></script>
 ```
 
-Create **script.js**:
+Create **frontend/script.js**:
 
 ```js
 const backendURL = "http://vinitzcloud.ap-south-1.elasticbeanstalk.com";
 
 async function loadProducts() {
   const res = await fetch(backendURL + "/products");
-  const data = await res.json();
+  const products = await res.json();
 
   document.getElementById("products").innerHTML =
-    data.map(
-      (p) => `
+    products.map(p => `
       <div>
         <img src="${p.image}" width="150">
         <h3>${p.name}</h3>
         <p>₹${p.price}</p>
       </div>
-    `
-    ).join("");
+    `).join("");
 }
 
 loadProducts();
 ```
 
+Create **frontend/style.css**:
+
+```css
+body { font-family: Arial; padding: 20px; }
+#products { display: flex; gap: 20px; flex-wrap: wrap; }
+```
+
 ---
 
-# ⭐ STEP 6 — Host Frontend on S3  
+# ⭐ STEP 9 — Create S3 Bucket for Frontend  
 
-Create bucket:
+Bucket name:
 
 ```
 mini-ecommerce-frontend-vinit
 ```
 
-Enable **Static Website Hosting**  
-Set index: `index.html`
+---
+
+# ⭐ STEP 10 — Enable Static Website Hosting  
+
+Go to:
+Properties → Static Website Hosting → Enable
+
+Index document:
+```
+index.html
+```
+
+Copy Website Endpoint.
 
 ---
 
-## 🟩 Add Public Bucket Policy
+# ⭐ STEP 11 — Add Public Bucket Policy  
+
+Go to:
+Permissions → Bucket Policy
+
+Paste:
 
 ```json
 {
@@ -307,40 +400,36 @@ Set index: `index.html`
 }
 ```
 
+---
+
+# ⭐ STEP 12 — Upload Frontend Files  
+
 Upload:
 - index.html  
 - script.js  
 - style.css  
 
-Frontend URL:
+Your live frontend:
 
 ```
 http://mini-ecommerce-frontend-vinit.s3-website.ap-south-1.amazonaws.com/
 ```
 
-### 📸 Screenshot — Frontend Live  
 <img src="ADD_YOUR_SCREENSHOT" width="900">
 
 ---
 
-# ⭐ STEP 7 — Test Everything  
+# 🎉 Project Working Successfully  
 
-### ✔️ Products load  
-### ✔️ Images load  
-### ✔️ Orders appear in DynamoDB  
-### ✔️ Backend reachable  
-### ✔️ Frontend works on S3  
-
----
-
-# 📊 (Optional) Add CloudFront + HTTPS  
-Ask me:  
-**“Add CloudFront section”**
+✔ Products load  
+✔ Images load  
+✔ Orders stored in DynamoDB  
+✔ Backend EB works  
+✔ Frontend S3 works  
 
 ---
 
 # 👨‍💻 Author  
-
 **Vinit Tippanawar**  
 AWS | Cloud | DevOps  
 
