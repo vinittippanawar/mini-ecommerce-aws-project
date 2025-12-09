@@ -1,12 +1,15 @@
 # 🚀 Mini Ecommerce Project (Node.js → Elastic Beanstalk → DynamoDB → S3 Frontend Hosting)
-A fully deployed, beginner-friendly AWS cloud project for portfolio & resume.
 
-This project contains:
-- Backend API (Node.js on Elastic Beanstalk)
-- Frontend (S3 Static Website Hosting)
-- DynamoDB Tables (Products + Orders)
-- Product Images (S3 Bucket)
-- Full step-by-step setup including all issues faced during deployment
+A fully deployed, cloud-ready mini ecommerce application built on AWS.  
+This project demonstrates **real-world fullstack deployment** using AWS services — perfect for students, beginners, and anyone building a portfolio project.
+
+This setup includes:
+- **Backend API** (Node.js on Elastic Beanstalk)
+- **Frontend** (Static website hosted on Amazon S3)
+- **Database** (DynamoDB tables for Products & Orders)
+- **Image Hosting** (Public S3 bucket for product images)
+- **Complete step-by-step guide**, including attached images for better understanding
+
 
 ---
 
@@ -21,8 +24,9 @@ DynamoDB (Products + Orders)
                      ↓
 S3 Image Bucket (Public Images)
 ```
+**📸ARCHITECTURE IMAGE**
 
-<img src="ADD_YOUR_SCREENSHOT" width="900">
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/24fce5a6-f6f0-467c-a6bb-e672c522d8f1" />
 
 ---
 
