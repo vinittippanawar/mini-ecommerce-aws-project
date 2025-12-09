@@ -51,7 +51,7 @@ mini-ecommerce/
 - IAM Admin user  
 - Region: ap-south-1 (Mumbai)  
 - Node.js installed  
-- Basic VS Code  
+  
 
 ---
 
@@ -71,11 +71,11 @@ Insert sample items:
   "name": "Wireless Earbuds",
   "price": 999,
   "description": "High quality wireless earbuds.",
-  "image": "https://mini-ecommerce-images-vinit.s3.ap-south-1.amazonaws.com/wirless.jpg"
+  "image": "https://mini-ecommerce-images-vinit.s3.ap-south-1.amazonaws.com/wirless.jpg" (when you upload product images in s3 then you will get this url so first keep it blank and when you get s3 images then edit this section with actual image link for each product )
 }
 ```
+so replace this section with actual s3 link or you can edit in json format <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/c7cc1dcf-d875-4455-b813-6239108296fa" />
 
-<img src="ADD_YOUR_SCREENSHOT" width="900">
 
 ---
 
@@ -95,7 +95,7 @@ Example item:
 }
 ```
 
-<img src="ADD_YOUR_SCREENSHOT" width="900">
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/47898d5e-bcf4-452e-bf3e-4b7db10da168" />
 
 ---
 
