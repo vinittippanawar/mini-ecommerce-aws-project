@@ -500,7 +500,7 @@ Example order:
 ```
 http://mini-ecommerce-frontend-vinit.s3-website.ap-south-1.amazonaws.com/
 ```
-5.Refresh the Orders table → A new order should appear automatically.
+5. Refresh the Orders table → A new order should appear automatically.
 
 **SAMPLE VIDEO**
 
