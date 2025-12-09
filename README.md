@@ -520,4 +520,5 @@ https://github.com/user-attachments/assets/25c238f4-74fb-4c36-a89b-af9293cb3a41
 **Vinit Tippanawar**  
 AWS | Cloud | DevOps  
 
-*If you like this project, ⭐ star the repo!*
+*If this repo helped you, smash that ⭐ button!
+Your support = more awesome projects coming soon.*
